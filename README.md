@@ -1,2 +1,2 @@
-# web-components-examples
+# Web Component Examples
 A series of web component examples
