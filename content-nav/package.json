@@ -1,0 +1,23 @@
+{
+  "name": "content-nav",
+  "version": "1.0.0",
+  "description": "A web component that creates a navigation for the given content based on user headline tags.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "keywords": [],
+  "author": "Lukas Korten",
+  "license": "ISC",
+  "ava": {
+    "require": [
+      "esm"
+    ]
+  },
+  "devDependencies": {
+    "ava": "^1.0.1"
+  },
+  "dependencies": {
+    "esm": "^3.0.84"
+  }
+}
