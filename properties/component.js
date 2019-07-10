@@ -4,7 +4,7 @@ template.innerHTML = `<p></p>`;
 class MyComponent extends HTMLElement {
 
     set name(value) {
-        this._name = name;
+        this._name = value;
         this.nameElement.innerText = this._name;
     }
 
