@@ -17,7 +17,8 @@ template.innerHTML = `
     .content {
         position: absolute;
         top: 100%;
-        right: 0;
+        left: 0;
+        min-width: 150px;
         margin-top: 5px;
         padding: 10px 15px;
         background: white;
@@ -44,16 +45,16 @@ class MyDropdown extends HTMLElement {
     }
 
     connectedCallback() {
-        this.button = this.shadowRoot.querySelector('button');
-        this.button.addEventListener('click', () => this.toggle());
+        this.buttonElement = this.shadowRoot.querySelector('button');
+        this.buttonElement.addEventListener('click', () => this.toggle());
 
-        this.content = this.shadowRoot.querySelector('div.content');
-        this.content.style.display = 'none';
+        this.contentElement = this.shadowRoot.querySelector('div.content');
+        this.contentElement.style.display = 'none';
     }
 
     toggle() {
-        const show = this.content.style.display === 'block';
-        this.content.style.display = show ? 'none' : 'block';
+        const show = this.contentElement.style.display === 'none';
+        this.contentElement.style.display = show ? 'block' : 'none';
     }
 
 }
