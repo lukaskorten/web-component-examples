@@ -51,12 +51,9 @@ class MyDropdown extends HTMLElement {
 
         this.attachShadow({mode: 'open'});
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-    }
-
-    connectedCallback() {
+        
         this.buttonElement = this.shadowRoot.querySelector('button');
         this.buttonElement.addEventListener('click', () => this.toggle());
-
         this.contentElement = this.shadowRoot.querySelector('div.content');
         this.contentElement.style.display = 'none';
     }

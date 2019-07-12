@@ -37,6 +37,10 @@ template.innerHTML = `
 
 class MyDropdown extends HTMLElement {
 
+    static get observedAttributes() {
+        return ['title'];
+    }
+
     get title() {
         return this._title;
     }
@@ -51,16 +55,23 @@ class MyDropdown extends HTMLElement {
 
         this.attachShadow({mode: 'open'});
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-
+        
         this.buttonElement = this.shadowRoot.querySelector('button');
         this.buttonElement.addEventListener('click', () => this.toggle());
         this.contentElement = this.shadowRoot.querySelector('div.content');
         this.contentElement.style.display = 'none';
     }
 
+    attributeChangedCallback(attrName, oldValue, newValue) {
+        if (attrName === 'title') {
+            this.title = newValue;
+        }
+    }
+
     toggle() {
         const show = this.contentElement.style.display === 'none';
         this.contentElement.style.display = show ? 'block' : 'none';
+        this.dispatchEvent(new CustomEvent('toggle', { detail: show }));
     }
 
 }
