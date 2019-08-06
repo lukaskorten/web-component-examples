@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Star Wars Charactere</title>
+
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        main {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        sw-character-detail {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Star Wars Charactere</h1>
+        <main>
+            <sw-character-list></sw-character-list>
+            <sw-character-detail></sw-character-detail>
+        </main>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+
+</body>
+
+</html>
